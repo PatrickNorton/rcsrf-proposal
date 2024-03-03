@@ -25,12 +25,40 @@
 
 \section{Background and Rationale}
 
+This project is in the domain of Lie theory, which focuses around an object
+called a \emph{Lie algebra}. A Lie algebra is a vector space with a binary
+operation $[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}$ that satisfies certain nice properties~\cite{Erd06}.
+
+An important structure related to Lie algebras is that of the Lie module. A Lie
+module is a vector space that is ``acted on'' by a Lie algebra---that is, each
+element of the algebra induces some transformation on the vector space in a
+particularly nice way. This project focuses on one specific module, which we
+notate $\Sym(\mathfrak{g})$.
+% TODO: Explain Sym(g)
+
+In addition to building up with Lie algebras, we can also break them down.
+Similarly to how numbers decompose into primes, we can decompose Lie algebras
+into subalgebras. A subalgebra of particular importance is the Cartan
+subalgebra.
+
+Like how algebras break down into subalgebras, we can break down modules into
+submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
+into submodules.
+
+Important to our classification of submodules is the concept of a weight vector.
+A weight vector is an element $v$ of a module such that everything that acts on
+$v$ scales it by some constant factor. It turns out that being able to describe
+these weight vectors is sufficient to be able to completely describe the
+submodules of any module.
+
 % TODO:
 % Lie algebra
 % Cartan subalgebra
 % Weight vectors
 % Highest weight vectors
 % Modules & highest weight modules
+% Relevant theorems (with citations)
+% Allegedly, we know what the weights are in Sym(g)---what are they (w/source)
 % All that physics stuff
 
 \section{Specific Aim and Hypothesis}
