@@ -1,3 +1,5 @@
+
+
 \documentclass[11pt, reqno]{amsart}
 
 \include{prelude.tex}
@@ -27,21 +29,61 @@
 
 \section{Background and Rationale}
 
-This project is in the domain of Lie theory, which focuses around an object
-called a \emph{Lie algebra}. A Lie algebra is a vector space with a binary
-operation $[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}$ that satisfies certain nice properties~\cite{Erd06}.
+This project is in mathematical physics and representation theory. Specifically, we will be studying certain polynomials and their role in continuous phase transitions.  
+A \emph{continuous phase transition} is a change to a system where some metric describing the system changes 
+continuously over the transition \cite[\S1]{Sa06}. This is opposed to the general use of a phase 
+transition where the phase changes may happen discretely. The classic example of a 
+continuous phase transition is studying the magnetization---the strength of a magnet 
+per unit volume---of a material as the material is heated. Applied heat causes the 
+magnetization of a material to decrease continuously until the material is no longer 
+magnetized. This is in contrast to a dis-continuous phase transition such as the 
+boiling of water, where the density of the water changes discontinuously as the water 
+changes from a liquid state to a gas state.
 
-An important structure related to Lie algebras is that of the Lie module. A Lie
-module is a vector space that is ``acted on'' by a Lie algebra---that is, each
-element of the algebra induces some transformation on the vector space in a
-particularly nice way. This project focuses on one specific module, which we
-notate $\Sym(\mathfrak{g})$. \emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
+USE TO TRANSITION TO MATH:\\
+The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
+of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
+vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
+operator, which grants information about the behavior of continuous phase transitions. 
+Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
+compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. 
+
+
+
+TRANSITION PHRASE INTO MATH
+%The driving mathematical object in our work is a
+ \emph{Lie algebra} $\fg$ (pronounced ``Lee''). This is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
+\[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
+To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
+
+
+??? In addition to building up with Lie algebras, we can also break them down.
+Similarly to how numbers decompose into primes, we can decompose Lie algebras
+into subalgebras. And just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a 
+large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to 
+\begin{center} compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$. \end{center}
+
+
+
+
+%
+%A subalgebra of particular importance is the Cartan
+%subalgebra. Large family of pairwise commuting operators in $\fg$, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. 
+%
+
+%
+%
+%An important structure related to Lie algebras is that of the Lie module. A Lie
+%module is a vector space that is ``acted on'' by a Lie algebra---that is, each
+%element of the algebra induces some transformation on the vector space in a
+%particularly nice way. This project focuses on one specific module, which we
+%notate $\Sym(\mathfrak{g})$. 
+%
+
+\emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
 is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$.
 
-In addition to building up with Lie algebras, we can also break them down.
-Similarly to how numbers decompose into primes, we can decompose Lie algebras
-into subalgebras. A subalgebra of particular importance is the Cartan
-subalgebra.
+
 
 Like how algebras break down into subalgebras, we can break down modules into
 submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
@@ -55,24 +97,16 @@ submodules of any module.
 
 %These next two paragraphs about the physical implications need to be reviewed/rewritten, I had a hard time navigating the different spaces that were being discussed in Noah's project description, so there may be some inaccuracies.
 
-The study of the highest weight vectors of $\Sym(\fg)$ has implications in physics,
-mainly regarding the study of continuous phase transistions. A continuous phase 
-transition is a change to a system where some metric describing the system changes 
-continuously over the transition.\cite{Sa06} This is opposed to the general use of a phase 
-transition where the phase changes may happen discretely. The classic example of a 
-continuous phase transition is studing the magnetization---the strength of a magnet 
-per unit volume---of a material as the material is heated. Applied heat casuses the 
-magnetization of a material to decrease continuously until the material is no longer 
-magnetized. This is in contrast to a dis-continuous phase transition such as the 
-boiling of water, where the density of the water changes discontinuously as the water 
-changes from a liquid state to a gas state.
+%The study of the highest weight vectors of $\Sym(\fg)$ has implications in physics,
+%mainly regarding the study of continuous phase transistions.
 
-The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
-of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
-vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
-operator, which grants information bout the behavior of continuous phase transitions. 
-Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
-comprimising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. ***This section needs work, needs to go into more technical things (maybe? I'm not sure how much detail is necessary)***
+
+%The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
+%of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
+%vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
+%operator, which grants information about the behavior of continuous phase transitions. 
+%Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
+%compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. ***This section needs work, needs to go into more technical things (maybe? I'm not sure how much detail is necessary)***
 
 % TODO:
 % Lie algebra
@@ -86,9 +120,20 @@ comprimising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ 
 
 \section{Specific Aim and Hypothesis}
 
+PUT MORE TECHNICAL DEFINITIONS HERE
+
+
 This project aims to build on the theory regarding the highest weight vectors in 
 $\Sym(\fg)$ by providing a classification of the highest weight vectors. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
 \[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\]
+
+
+\begin{itemize}
+\item Primary: Compute hw vectors
+\item Secondary:Build bridges between deeper representation theory literature/results, mathematical physics, and computational methods
+
+
+\end{itemize}
 
 
 
@@ -99,15 +144,46 @@ $\Sym(\fg)$ by providing a classification of the highest weight vectors. As a st
 
 \section{Design and Procedure}
 
+
+
+
+We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study. 
+
+CITE LECTURE NOTES and point out that this gives a decomp at a high level, but not in the practical comcrete way we need. 
+
+STRENGTH: Using established knowledge of higher level mathematical structure to guide concrete computations, looking for specific examples. 
+
+\begin{itemize}
+\item Do the first few small examples, seeing the decomposition happen for $\fg = \fsl_n$ ($n=3,4$), $\fsp_{6}$, $\fso_6$ in small degree homogeneous components. 
+\item Review infinite families of weight vectors appearing in NOAH's THESIS. 
+\item Generate code to derive all highest weight vectors in small degree.
+\item Use projection operators to build highest weight vectors in a more sophisticated way. (We know the weights)
+\item LEverage these results to build hw vecs in general degree (specific to types ACD)
+\end{itemize}
+
+
+
+
+
 ***Not sure what to put in this section since there is not really an experimental design or procedure part of our research.***
 
 \section{Predicted and Alternative Outcomes}
 
 ***Same for this section, not sure how we can predict outcomes besides saying that we're going to try and create a classification.***
 
+
+
+\begin{itemize}
+\item Predicted stuff: find either recursive or closed formulas for favorite polynomials.
+\item Unpack and ground mathematical theory for practical use. Build bridges from representation theory to physics.
+\item Add context to the literature that makes deep math theorems accessible. 
+\item Expand upon earlier progress with coding examples to produce computational tools.
+
+\end{itemize}
+
 \section{Role of Student}
 
-The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result.
+The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. (MOVE SOME OF THE STORY DOWN HERE? DISCUSS EXPERTISE: TOPICS IN ALGEBRA, CODING EXPERIENCE, ETC.) 
 
 \section{Role of Faculty}
 
@@ -117,6 +193,6 @@ Zajj Daugherty and Noah Charles will (meetings of set frequency with research gr
 
 % TODO: Written by Zajj
 
-\printbibliography{}
+\printbibliography
 
 \end{document}
