@@ -31,3 +31,6 @@ tmp/
 *.svn
 *.synctex.gz
 *.toc
+
+#TeX output files
+*.pdf
