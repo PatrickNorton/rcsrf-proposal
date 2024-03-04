@@ -35,8 +35,8 @@ An important structure related to Lie algebras is that of the Lie module. A Lie
 module is a vector space that is ``acted on'' by a Lie algebra---that is, each
 element of the algebra induces some transformation on the vector space in a
 particularly nice way. This project focuses on one specific module, which we
-notate $\Sym(\mathfrak{g})$.
-% TODO: Explain Sym(g)
+notate $\Sym(\mathfrak{g})$. \emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
+is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$.
 
 In addition to building up with Lie algebras, we can also break them down.
 Similarly to how numbers decompose into primes, we can decompose Lie algebras
@@ -53,6 +53,27 @@ $v$ scales it by some constant factor. It turns out that being able to describe
 these weight vectors is sufficient to be able to completely describe the
 submodules of any module.
 
+%These next two paragraphs about the physical implications need to be reviewed/rewritten, I had a hard time navigating the different spaces that were being discussed in Noah's project description, so there may be some inaccuracies.
+
+The study of the highest weight vectors of $\Sym(\fg)$ has implications in physics,
+mainly regarding the study of continuous phase transistions. A continuous phase 
+transition is a change to a system where some metric describing the system changes 
+continuously over the transition.\cite{Sa06} This is opposed to the general use of a phase 
+transition where the phase changes may happen discretely. The classic example of a 
+continuous phase transition is studing the magnetization---the strength of a magnet 
+per unit volume---of a material as the material is heated. Applied heat casuses the 
+magnetization of a material to decrease continuously until the material is no longer 
+magnetized. This is in contrast to a dis-continuous phase transition such as the 
+boiling of water, where the density of the water changes discontinuously as the water 
+changes from a liquid state to a gas state.
+
+The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
+of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
+vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
+operator, which grants information bout the behavior of continuous phase transitions. 
+Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
+comprimising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. ***This section needs work, needs to go into more technical things (maybe? I'm not sure how much detail is necessary)***
+
 % TODO:
 % Lie algebra
 % Cartan subalgebra
@@ -65,20 +86,32 @@ submodules of any module.
 
 \section{Specific Aim and Hypothesis}
 
+This project aims to build on the theory regarding the highest weight vectors in 
+$\Sym(\fg)$ by providing a classification of the highest weight vectors. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
+\[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\]
+
+
+
+
+***This section needs work, I'm not sure what hypotheses can be made considering that we're not doing an experient, and I'm not sure how much further we can go into the specific aim, maybe discuss what is already known and some possible first steps, although that could also go in the next section***
 % TODO:
 % Explain what "classify" means
 
 \section{Design and Procedure}
 
+***Not sure what to put in this section since there is not really an experimental design or procedure part of our research.***
+
 \section{Predicted and Alternative Outcomes}
+
+***Same for this section, not sure how we can predict outcomes besides saying that we're going to try and create a classification.***
 
 \section{Role of Student}
 
-The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to produce (publish?) a paper (I assume this is the right word?) highlighting either a discovered classification, or any progress made towards such a result.
+The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result.
 
 \section{Role of Faculty}
 
-Zajj Daugherty and Noah Charles will (meetings of set frequency with research group?) be resources for the group and provide insight on good ways to proceed. % I have no clue what should actually go in this section
+Zajj Daugherty and Noah Charles will (meetings of set frequency with research group?) be resources for the group and provide insight on good ways to proceed. ***Not sure about other roles***
 
 \section{Benefit to Student}
 
