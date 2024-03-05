@@ -1,15 +1,13 @@
-
-
 \documentclass[11pt, reqno]{amsart}
 
-\include{prelude.tex}
+\input{prelude.tex}
 
-\usepackage{biblatex}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
 \usepackage{microtype}
 \addbibresource{bibliography.bib}
 
 \title{Project Proposal}
-\author{Patrick Norton \and Elijah Whitlam-Sandler}
+\author{Patrick Norton, Elijah Whitlam-Sandler \and Pranay Pingali}
 
 \begin{document}
 
@@ -29,16 +27,9 @@
 
 \section{Background and Rationale}
 
-This project is in mathematical physics and representation theory. Specifically, we will be studying certain polynomials and their role in continuous phase transitions.  
-A \emph{continuous phase transition} is a change to a system where some metric describing the system changes 
-continuously over the transition \cite[\S1]{Sa06}. This is opposed to the general use of a phase 
-transition where the phase changes may happen discretely. The classic example of a 
-continuous phase transition is studying the magnetization---the strength of a magnet 
-per unit volume---of a material as the material is heated. Applied heat causes the 
-magnetization of a material to decrease continuously until the material is no longer 
-magnetized. This is in contrast to a dis-continuous phase transition such as the 
-boiling of water, where the density of the water changes discontinuously as the water 
-changes from a liquid state to a gas state.
+This project is in mathematical physics and representation theory. Specifically, we will be studying certain polynomials and their role in continuous phase transitions. A \emph{continuous phase transition} is a change to a system where some metric describing the system changes continuously over the transition \cite[\S1]{Sa06}. This is opposed to the general use of a phase transition where the phase changes may happen discretely. The classic example of a continuous phase transition is studying the magnetization---the strength of a magnet per unit volume---of a material as the material is heated. Applied heat causes the magnetization of a material to decrease continuously until the material is no longer magnetized. This is in contrast to a dis-continuous phase transition such as the boiling of water, where the density of the water changes discontinuously as the water changes from a liquid state to a gas state.
+
+In order to study continuous phase transitions, ???, 
 
 USE TO TRANSITION TO MATH:\\
 The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
@@ -123,14 +114,13 @@ submodules of any module.
 PUT MORE TECHNICAL DEFINITIONS HERE
 
 
-This project aims to build on the theory regarding the highest weight vectors in 
-$\Sym(\fg)$ by providing a classification of the highest weight vectors. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
-\[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\]
+This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors.  As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
+\[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\] 
 
 
 \begin{itemize}
 \item Primary: Compute hw vectors
-\item Secondary:Build bridges between deeper representation theory literature/results, mathematical physics, and computational methods
+\item Secondary: Build bridges between deeper representation theory literature/results, mathematical physics, and computational methods
 
 
 \end{itemize}
@@ -169,7 +159,10 @@ STRENGTH: Using established knowledge of higher level mathematical structure to 
 
 \section{Predicted and Alternative Outcomes}
 
-***Same for this section, not sure how we can predict outcomes besides saying that we're going to try and create a classification.***
+Our predicted outcome is to find either recursive or closed formulas for the highest weight vectors of $\Sym(\fg)$, which will take the form of polynomials as $\Sym(\fg)$ is a polynomial ring. In the chance we are not able to achieve this goal, there are many meaningful contributions that can be made to the literature. \\
+Much of the Lie theory literature that exists does so at a very high level, and offers little to no insight about the applictions of such theory. There is great value in being able to ground the currently available high level Lie theory so that it is more easily accessible to those without a background in representation theory who want to exploit the results currently out of reach.\\
+It would be equally useful to add context to some of the current literature that is only truly available to experts in the field. There are many `results' that could be more accurately refered to as unwritten corollaries, which adding context to would allow the material to be used at a lower level.\\
+There is also the outcome where we create computational methods based on previous theory so that 
 
 
 
@@ -183,7 +176,12 @@ STRENGTH: Using established knowledge of higher level mathematical structure to 
 
 \section{Role of Student}
 
-The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. (MOVE SOME OF THE STORY DOWN HERE? DISCUSS EXPERTISE: TOPICS IN ALGEBRA, CODING EXPERIENCE, ETC.) 
+The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. 
+
+This project requires background knowledge of abstract algebra, and more specifically Lie theory, which Patrick and Elijah have experience with from the Fall 2023 section of Topics in Algebra. Patrick and Elijah are also each persuing either a Math-CS interdisciplinary major, or a CS minor, which will aid them in writing code that can efficiently determine the highest weight vectors of a Lie algebra $\fg$.
+
+
+(MOVE SOME OF THE STORY DOWN HERE? DISCUSS EXPERTISE: TOPICS IN ALGEBRA, CODING EXPERIENCE, ETC.) 
 
 \section{Role of Faculty}
 
