@@ -117,13 +117,14 @@ PUT MORE TECHNICAL DEFINITIONS HERE
 This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors.  As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
 \[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\] 
 
+Our secondary goal is to be able to build bridges between representation theory, mathematical physics, and computational methods. There are many interesting results in representation theory that are not necessarily known to many physicists, and this can result in duplicated effort between the fields.
 
-\begin{itemize}
-\item Primary: Compute hw vectors
-\item Secondary: Build bridges between deeper representation theory literature/results, mathematical physics, and computational methods
+% \begin{itemize}
+% \item Primary: Compute hw vectors
+% \item Secondary: Build bridges between deeper representation theory literature/results, mathematical physics, and computational methods
 
 
-\end{itemize}
+% \end{itemize}
 
 
 
@@ -143,13 +144,19 @@ CITE LECTURE NOTES and point out that this gives a decomp at a high level, but n
 
 STRENGTH: Using established knowledge of higher level mathematical structure to guide concrete computations, looking for specific examples. 
 
-\begin{itemize}
-\item Do the first few small examples, seeing the decomposition happen for $\fg = \fsl_n$ ($n=3,4$), $\fsp_{6}$, $\fso_6$ in small degree homogeneous components. 
-\item Review infinite families of weight vectors appearing in NOAH's THESIS. 
-\item Generate code to derive all highest weight vectors in small degree.
-\item Use projection operators to build highest weight vectors in a more sophisticated way. (We know the weights)
-\item Leverage these results to build hw vecs in general degree (specific to types ACD)
-\end{itemize}
+We plan to start by computing examples for a few of the smaller cases, in particular $\fg = \fsl_{n}$ ($n = 3, 4$), $\fsp_{6}$, and $\fso_{6}$. This will give us an opportunity to allow us to see the decomposition happen and give ideas as to possible classifications and help us determine how to proceed.
+
+In addition to that, we plan to review the infinite families of weight vectors appearing in . % TODO: Cite
+
+Once we have some idea of the structure, we plan to then generate code to derive all highest weight vectors of small degree. Having generated lots of examples, we should be able to use projection operators to build highest weight vectors in a more generalizable way. Once we have these, we should be able to leverage these results to build highest weight vectors in general degree. We plan to limit ourselves to vectors specific to the Lie algebras of types $A_{n}$, $C_{n}$, and $D_{n}$; this is because those are the types most applicable to continuous phase transitions.
+
+% \begin{itemize}
+% \item Do the first few small examples, seeing the decomposition happen for $\fg = \fsl_n$ ($n=3,4$), $\fsp_{6}$, $\fso_6$ in small degree homogeneous components.
+% \item Review infinite families of weight vectors appearing in NOAH's THESIS.
+% \item Generate code to derive all highest weight vectors in small degree.
+% \item Use projection operators to build highest weight vectors in a more sophisticated way. (We know the weights)
+% \item Leverage these results to build hw vecs in general degree (specific to types ACD)
+% \end{itemize}
 
 
 
