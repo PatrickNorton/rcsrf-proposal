@@ -41,17 +41,13 @@ compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ 
 
 
 
-TRANSITION PHRASE INTO MATH
-%The driving mathematical object in our work is a
- \emph{Lie algebra} $\fg$ (pronounced ``Lee''). This is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
+A continuous phase transition can be nicely represented through the use of a \emph{Lie algebra} $\fg$ (pronounced ``Lee''). This is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
 \[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
 To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
 
 
 ??? In addition to building up with Lie algebras, we can also break them down.
-Similarly to how numbers decompose into primes, we can decompose Lie algebras
-into subalgebras. And just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a 
-large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to 
+Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras. And just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to
 \begin{center} compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$. \end{center}
 
 
@@ -138,13 +134,15 @@ Our secondary goal is to be able to build bridges between representation theory,
 
 
 
-We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study: the ``special linear'', ``special orthogonal'', and ``symplectic'' Lie algebras, notated $\fsl_n$, $\fso_n$, and $\fsp_n$ respectively.
+We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study: the ``special linear'', ``special orthogonal'', and ``symplectic'' Lie algebras, notated $\fsl_n$, $\fso_n$, and $\fsp_n$ respectively. This will give us an opportunity to allow us to see the decomposition happen and give ideas as to possible classifications and help us determine how to proceed.
+
 
 CITE LECTURE NOTES and point out that this gives a decomp at a high level, but not in the practical concrete way we need.
 
 STRENGTH: Using established knowledge of higher level mathematical structure to guide concrete computations, looking for specific examples. 
 
-We plan to start by computing examples for a few of the smaller cases, in particular $\fg = \fsl_{n}$ ($n = 3, 4$), $\fsp_{6}$, and $\fso_{6}$. This will give us an opportunity to allow us to see the decomposition happen and give ideas as to possible classifications and help us determine how to proceed.
+% TODO: Where in Dau14?
+As a base to work from, \cite{Dau14} gives us a high-level decomposition into weight spaces. However, this method is not concrete enough to be useful from a physics perspective.
 
 In addition to that, we plan to review the infinite families of weight vectors appearing in \cite{C20}. % TODO: Cite
 
