@@ -60,36 +60,24 @@ Anderson transitions have various symmetries (simple examples include symmetry u
 
 A Lie algebra $\fg$ (pronounced ``Lee'') is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
 \[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
-To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Instead of studying all of $\fg$, we instead narrow our focus to studying highest weight vectors in $\Sym(\fg)$, which is done without compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. 
+To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. In this project, instead of studying all of $\fg$, we narrow our focus to only studying highest weight vectors in $\Sym(\fg)$, which is done without compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space.
 
+Generally, a \emph{weight vector} is an element $v$ of a module such that everything that acts on $v$ scales it by some constant factor. It turns out that being able to describe these weight vectors is sufficient to be able to completely describe the submodules of any module. A \emph{highest weight vector} is a weight vector that is in the kernel of specific actions.
 
-Important to our classification of submodules is the concept of a weight vector.
-A weight vector is an element $v$ of a module such that everything that acts on
-$v$ scales it by some constant factor. It turns out that being able to describe
-these weight vectors is sufficient to be able to completely describe the
-submodules of any module.
+Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module. 
 
-
-Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
-
-\emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
-
-Like how algebras break down into subalgebras, we can break down modules into
-submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
-into submodules.
-
-In addition to building up with Lie algebras, we can also break them down.
-Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras. And just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to
+Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras, and just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to
 \begin{center} compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$. \end{center}
 
+% Like how algebras break down into subalgebras, we can break down modules into
+% submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
+% into submodules.
 
-
+In addition to building up with Lie algebras, we can also break them down.
 
 %
 %A subalgebra of particular importance is the Cartan
 %subalgebra. Large family of pairwise commuting operators in $\fg$, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. 
-%
-
 %
 %
 %An important structure related to Lie algebras is that of the Lie module. A Lie
@@ -99,23 +87,6 @@ Similarly to how numbers decompose into primes, we can decompose Lie algebras in
 %notate $\Sym(\mathfrak{g})$. 
 %
 
-
-is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$.
-
-
-
-%These next two paragraphs about the physical implications need to be reviewed/rewritten, I had a hard time navigating the different spaces that were being discussed in Noah's project description, so there may be some inaccuracies.
-
-%The study of the highest weight vectors of $\Sym(\fg)$ has implications in physics,
-%mainly regarding the study of continuous phase transistions.
-
-
-%The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
-%of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
-%vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
-%operator, which grants information about the behavior of continuous phase transitions. 
-%Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
-%compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. ***This section needs work, needs to go into more technical things (maybe? I'm not sure how much detail is necessary)***
 
 % TODO:
 % Lie algebra
@@ -129,9 +100,7 @@ is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a b
 
 \section{Specific Aim and Hypothesis}
 
-PUT MORE TECHNICAL DEFINITIONS HERE
-
-This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors.  As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
+This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors. Assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
 \[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\] 
 
 Our secondary goal is to be able to build bridges between representation theory, mathematical physics, and computational methods. There are many interesting results in representation theory that are not necessarily known to many physicists, and this can result in duplicated effort between the fields.
