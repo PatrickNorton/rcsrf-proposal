@@ -29,7 +29,7 @@
 \newpage
 
 \begin{abstract}
-  Lie Algebras, since their discovery, have grown to become an integral link between mathematics and theoretical physics. The highest weight vectors of a Lie algebra $\fg$ are key in describing the structure of $\fg$, but are also important objects in this link between mathematics and physics, as they \emph{are} the eigenfunctions of the Laplace-Casimir operator. There is not currently an easy way to determing the highest weight vectors of $\Sym(\fg)$, which is a limits the incorporation of Lie theory into theoretical physics. We aim to provide a classification of the heighest weight vectors of $\Sym(\fg)$ for $\fg=\fsl_n,\fso_n$, and $\fsp_n$, and to create a way to computationally determine such vectors so they can be used efficiently in physics applications.
+  Lie Algebras, since their discovery, have grown to become an integral link between mathematics and theoretical physics. The highest weight vectors of a Lie algebra $\fg$ are key in describing the structure of $\fg$, but are also important objects in this link between mathematics and physics, as they \emph{are} the eigenvectors of the Laplace-Casimir operator. There is not currently an easy way to determing the highest weight vectors of $\Sym(\fg)$, which is a limits the incorporation of Lie theory into theoretical physics. We aim to provide a classification of the heighest weight vectors of $\Sym(\fg)$ for $\fg=\fsl_n,\fso_n$, and $\fsp_n$, and to create a way to computationally determine such vectors so they can be used efficiently in physics applications.
 \end{abstract}
 
 
@@ -62,16 +62,23 @@ A Lie algebra $\fg$ (pronounced ``Lee'') is a vector space, together with a non-
 \[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
 To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Instead of studying all of $\fg$, we instead narrow our focus to studying highest weight vectors in $\Sym(\fg)$, which is done without compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. 
 
+
+Important to our classification of submodules is the concept of a weight vector.
+A weight vector is an element $v$ of a module such that everything that acts on
+$v$ scales it by some constant factor. It turns out that being able to describe
+these weight vectors is sufficient to be able to completely describe the
+submodules of any module.
+
+
 Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
 
+\emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
 
+Like how algebras break down into subalgebras, we can break down modules into
+submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
+into submodules.
 
-A continuous phase transition can be nicely represented through the use of a \emph{Lie algebra} $\fg$ (pronounced ``Lee''). This is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
-\[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
-
-
-
-??? In addition to building up with Lie algebras, we can also break them down.
+In addition to building up with Lie algebras, we can also break them down.
 Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras. And just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to
 \begin{center} compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$. \end{center}
 
@@ -92,20 +99,10 @@ Similarly to how numbers decompose into primes, we can decompose Lie algebras in
 %notate $\Sym(\mathfrak{g})$. 
 %
 
-\emph{Speaking technically}, assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ 
+
 is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$.
 
 
-
-Like how algebras break down into subalgebras, we can break down modules into
-submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
-into submodules.
-
-Important to our classification of submodules is the concept of a weight vector.
-A weight vector is an element $v$ of a module such that everything that acts on
-$v$ scales it by some constant factor. It turns out that being able to describe
-these weight vectors is sufficient to be able to completely describe the
-submodules of any module.
 
 %These next two paragraphs about the physical implications need to be reviewed/rewritten, I had a hard time navigating the different spaces that were being discussed in Noah's project description, so there may be some inaccuracies.
 
