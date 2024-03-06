@@ -34,21 +34,19 @@ This project is in mathematical physics and representation theory. Specifically,
 
 If we consider disordered electronic systems in metals (systems where the arrangement of the ions is not perfectly regular \cite{dicastro2006disordered}), the electron states can be either all localized or all delocalized depending on the properties of the system. \emph{Anderson transitions} describe the transitions between these two phases \cite{Evers_2008}. To study Anderson transitions, we can consider the ``Renormalization group action'' (RG action) on the states (formally, the states are maps $Q : M \to X$ where $M, X$ are manifolds and $X$ is called the target space; the RG action is on the space of functions from $X$ to $R$): this action consists of a procedure whereby we assign sets of points average values, and then rescale to obtain a state of the same ``size'' again. This gives us information about what properties of the system are preserved under changes of scale.
 
-Anderson transitions have various symmetries (simple examples include symmetry under rotations or time-reversal); these symmetries can be described mathematically as Lie groups under which the Lagrangian is invariant. The target space is now naturally described by a ``Riemannian symmetric space'' $G/K$, where $K$ is a (not necessarily normal) subgroup, and the RG action is given by a differential operator that is also invariant under this group. The problem of finding physical characterizations of the state that are scale-invariant can now be restated as the mathematical problem of finding eigenfunctions for a differential operator invariant under a Lie group $G$. From a result in representation theory, we know that this differential operator is a polynomial in the ``Laplace-Beltrami'' operator, and its eigenfunctions are the highest-weight vectors of the Lie algebra associated with $G.$
+Anderson transitions have various symmetries (simple examples include symmetry under rotations or time-reversal); these symmetries can be described mathematically as Lie groups under which the Lagrangian is invariant. The target space is now naturally described by a ``Riemannian symmetric space'' $G/K$, where $K$ is a (not necessarily normal) subgroup, and the RG action is given by a differential operator that is also invariant under this group. The problem of finding physical characterizations of the state that are scale-invariant can now be restated as the mathematical problem of finding eigenfunctions for a differential operator invariant under a Lie group $G$. From a result in representation theory, we know that this differential operator is a polynomial in the ``Laplace-Beltrami'' operator, and its eigenfunctions are the highest-weight vectors of the Lie algebra $\fg$ associated with $G$. 
 
-USE TO TRANSITION TO MATH:\\
-The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
-of the Laplace-Casimir operator acting on $V$, so by studying the highest weight  
-vectors of $\fg$, one is one is also studying properties of the Laplace-Casimir 
-operator, which grants information about the behavior of continuous phase transitions. 
-Studying highest weight vectors in $\Sym(\fg)$ allows us to narrow our search without
-compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. 
+A Lie algebra $\fg$ (pronounced ``Lee'') is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
+\[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
+To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Instead of studying all of $\fg$, we instead narrow our focus to studying highest weight vectors in $\Sym(\fg)$, which is done without compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space. 
+
+Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
 
 
 
 A continuous phase transition can be nicely represented through the use of a \emph{Lie algebra} $\fg$ (pronounced ``Lee''). This is a vector space, together with a non-associative ``multiplication'' called a \emph{Lie bracket}
 \[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
-To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module.
+
 
 
 ??? In addition to building up with Lie algebras, we can also break them down.
