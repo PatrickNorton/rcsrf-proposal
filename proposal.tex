@@ -6,22 +6,44 @@
 \usepackage{microtype}
 \addbibresource{bibliography.bib}
 
-\title{Project Proposal}
+\title{Highest Weight Vectors in $\Sym(\fg)$}
 \author{Patrick Norton \and Elijah Whitlam-Sandler \and Pranay Pingali}
 
 \begin{document}
+\thispagestyle{empty}
+\setcounter{page}{0}
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  Highest Weight Vectors in $\Sym(\fg)$\\[10pt]
+  Elijah Whitlam-Sandler\\
+  \href{mailto:elijahw@reed.edu}{elijahw@reed.edu}\\[10pt]
+  with\\[10pt]
+  Zajj Daugherty\\
+  \href{mailto:zdaugherty@reed.edu}{zdaugherty@reed.edu}\\[10pt]
+  and\\[10pt]
+  Noah Charles\\
+  \href{mailto:ncharles@reed.edu}{ncharles@reed.edu}
+\end{center}
+\vspace*{\fill}
+\newpage
 
 \begin{abstract}
-  % TODO
-  This project is an attempt to classify the structure of certain mathematical
-  objects. % TODO: Explain what mathematical objects
-  The structure of these objects relates to important questions in both
-  physics and mathematics. % TODO: What questions?
-  We know that the structure of Lie algebras is completely controlled by
-  specific elements, known as highest weight vectors. Our goal is to find all
-  these highest weight vectors and determine how they relate to each other.
-  % TODO: Prior art
+  Lie Algebras, since their discovery, have grown to become an integral link between mathematics and theoretical physics. The highest weight vectors of a Lie algebra $\fg$ are key in describing the structure of $\fg$, but are also important objects in this link between mathematics and physics, as they \emph{are} the eigenfunctions of the Laplace-Casimir operator. There is not currently an easy way to determing the highest weight vectors of $\Sym(\fg)$, which is a limits the incorporation of Lie theory into theoretical physics. We aim to provide a classification of the heighest weight vectors of $\Sym(\fg)$ for $\fg=\fsl_n,\fso_n$, and $\fsp_n$, and to create a way to computationally determine such vectors so they can be used efficiently in physics applications.
 \end{abstract}
+
+
+% \begin{abstract}
+%   % TODO
+%   This project is an attempt to classify the structure of certain mathematical
+%   objects. % TODO: Explain what mathematical objects
+%   The structure of these objects relates to important questions in both
+%   physics and mathematics. % TODO: What questions?
+%   We know that the structure of Lie algebras is completely controlled by
+%   specific elements, known as highest weight vectors. Our goal is to find all
+%   these highest weight vectors and determine how they relate to each other.
+%   % TODO: Prior art
+% \end{abstract}
 
 \maketitle
 
@@ -160,15 +182,6 @@ It would be equally useful to add context to some of the current literature that
 There is also the outcome where we create computational methods based on previous theory. This would help increase the accessibility of the work on Lie algebras by making it easier for researchers in various fields to create working examples without necessarily needing to acquire a deep knowledge of the theory behind it.
 
 
-
-% \begin{itemize}
-% \item Predicted stuff: find either recursive or closed formulas for favorite polynomials.
-% \item Unpack and ground mathematical theory for practical use. Build bridges from representation theory to physics.
-% \item Add context to the literature that makes deep math theorems accessible. 
-% \item Expand upon earlier progress with coding examples to produce computational tools.
-
-% \end{itemize}
-
 \section{Role of Student}
 
 The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. 
@@ -191,7 +204,6 @@ From the physical perspective, we are motivated by a problem in scaling theory. 
 From the mathematical perspective, the question transforms into one of studying particular representations of Lie algebras. The mathematicians on the team (Patrick and Elijah) have taken a first course in Lie theory, and this project launches quite nicely from where that course left off. Students will learn how to ground some of the larger theorems of Lie theory in specific examples and computational methods, as well as how the mathematical structure translates back into physical applications. 
 
 Specifically, ...
-
 \printbibliography
 
 \end{document}
