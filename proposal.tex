@@ -7,7 +7,8 @@
 \addbibresource{bibliography.bib}
 
 \title{Highest Weight Vectors in $\Sym(\fg)$}
-\author{Patrick Norton \and Elijah Whitlam-Sandler \and Pranay Pingali}
+\author{Patrick Norton \and Elijah Whitlam-Sandler \and Pranay Pingali\\
+with Guangyi Zhang}
 
 \begin{document}
 \thispagestyle{empty}
@@ -29,7 +30,7 @@
 \newpage
 
 \begin{abstract}
-  Lie Algebras, since their discovery, have grown to become an integral link between mathematics and theoretical physics. The highest weight vectors of a Lie algebra $\fg$ are key in describing the structure of $\fg$, but are also important objects in this link between mathematics and physics, as they \emph{are} the eigenvectors of the Laplace-Casimir operator. There is not currently an easy way to determing the highest weight vectors of $\Sym(\fg)$, which is a limits the incorporation of Lie theory into theoretical physics. We aim to provide a classification of the heighest weight vectors of $\Sym(\fg)$ for $\fg=\fsl_n,\fso_n$, and $\fsp_n$, and to create a way to computationally determine such vectors so they can be used efficiently in physics applications.
+  Lie Algebras, since their discovery, have grown to become an integral link between mathematics and theoretical physics. The highest weight vectors of a Lie algebra $\fg$ are key in describing the structure of $\fg$, but are also important objects in this link between mathematics and physics, as they \emph{are} the eigenvectors of the Laplace-Casimir operator. There is not currently an easy way to determing the highest weight vectors of $\Sym(\fg)$, which limits the incorporation of Lie theory into theoretical physics. We aim to provide a classification of the heighest weight vectors of $\Sym(\fg)$ for $\fg=\fsl_n,\fso_n$, and $\fsp_n$, and to create a way to computationally determine such vectors so they can be used efficiently in physics applications.
 \end{abstract}
 
 
@@ -62,18 +63,21 @@ A Lie algebra $\fg$ (pronounced ``Lee'') is a vector space, together with a non-
 \[[,]: \mathfrak{g} \times \mathfrak{g} \rightarrow \mathfrak{g}.\]
 To each Lie algebra, we associate a set of polynomials, denoted $\Sym(\fg)$. This set is a special example of a Lie algebra \emph{module}, meaning that it is a vector space equipped with an \emph{action} by $\fg$: the elements of $\fg$ define linear functions from $\Sym(\fg)$ to itself. In this project, instead of studying all of $\fg$, we narrow our focus to only studying highest weight vectors in $\Sym(\fg)$, which is done without compromising the physical meaning, as the highest weight vectors in $\Sym(\fg)$ can be mapped back to the original function space.
 
-Generally, a \emph{weight vector} is an element $v$ of a module such that everything that acts on $v$ scales it by some constant factor. It turns out that being able to describe these weight vectors is sufficient to be able to completely describe the submodules of any module. A \emph{highest weight vector} is a weight vector that is in the kernel of specific actions.
+Generally, a \emph{weight vector} is an element $v$ of a module such that everything that acts on $v$ scales it by some constant factor. It turns out that being able to describe these weight vectors is sufficient to be able to completely describe the submodules of any module. A \emph{highest weight vector} is a weight vector that is in the kernel of specific actions. Weight vectors are encoded in $\fg$-modules, which can be computationally difficult to find, so we instead use some tools from Lie theory. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. With this, our primary goal is to
+\begin{center}
+  \fbox{compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$.}
+\end{center}
 
-Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module. 
+% Our goal is to find those specific polynomials that generate the fundamental building blocks of our favorite $\fg$-module. 
 
-Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras, and just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces. Each Lie algebra has a large family of pairwise commuting operators in $\fg$, called the \emph{Cartan} subalgebra, whose eigenvalues reveal the structure of any (reasonably nice) $\fg$-module. Our primary goal is to
-\begin{center} compute the eigenvalues and eigenvectors of the Cartan in $\Sym(\fg)$. \end{center}
+% Similarly to how numbers decompose into primes, we can decompose Lie algebras into subalgebras, and just like factoring large numbers is computationally difficult, we need special tools for decomposing large $\fg$-modules into their simple pieces.
+
 
 % Like how algebras break down into subalgebras, we can break down modules into
 % submodules. This is the overall goal of our project: to break down $\Sym(\mathfrak{g})$
 % into submodules.
 
-In addition to building up with Lie algebras, we can also break them down.
+% In addition to building up with Lie algebras, we can also break them down.
 
 %
 %A subalgebra of particular importance is the Cartan
@@ -100,7 +104,7 @@ In addition to building up with Lie algebras, we can also break them down.
 
 \section{Specific Aim and Hypothesis}
 
-This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors. Assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
+This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors. Assuming that $\fg$ is finite dimensional, $\Sym(\mathfrak{g})\coloneqq F\left[ \cB \right]$ is a polynomial ring where $F$ is the underlying field of $\fg$ and $\cB$ is a basis of $\fg$. As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are, and there has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
 \[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\] 
 
 Our secondary goal is to be able to build bridges between representation theory, mathematical physics, and computational methods. There are many interesting results in representation theory that are not necessarily known to many physicists, and this can result in duplicated effort between the fields.
@@ -112,22 +116,22 @@ Our secondary goal is to be able to build bridges between representation theory,
 
 % \end{itemize}
 
-***This section needs work, I'm not sure what hypotheses can be made considering that we're not doing an experiment, and I'm not sure how much further we can go into the specific aim, maybe discuss what is already known and some possible first steps, although that could also go in the next section***
+% ***This section needs work, I'm not sure what hypotheses can be made considering that we're not doing an experiment, and I'm not sure how much further we can go into the specific aim, maybe discuss what is already known and some possible first steps, although that could also go in the next section***
 % TODO:
 % Explain what "classify" means
 
 \section{Design and Procedure}
 
-We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study: the ``special linear'', ``special orthogonal'', and ``symplectic'' Lie algebras, notated $\fsl_n$, $\fso_n$, and $\fsp_n$ respectively. This will give us an opportunity to allow us to see the decomposition happen and give ideas as to possible classifications and help us determine how to proceed.
+We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study: the ``special linear'', ``special orthogonal'', and ``symplectic'' Lie algebras, notated $\fsl_n$, $\fso_n$, and $\fsp_n$ respectively. This will give us an opportunity to allow us to see the decomposition happen, and give ideas as to possible classifications and help us determine how to proceed.
 
 Methods for decomposing semisimple finite-dimensional Lie algebras (such as $\fsl_n$) are known \cite{Dau14}, but only really provide an understanding of what is happening at a higher level. The decompositions do not provide concrete highest weight vectors that are required for Lie theory to be translated to physics. Because so much structure is used when working with Lie algebras at a high level, our goal is to find ways to exploit the known structure, and make use of it at a lower level.
 
 % TODO: Where in Dau14?
-As a base to work from, \cite{Dau14} gives us a high-level decomposition into weight spaces. However, this method is not concrete enough to be useful from a physics perspective.
+% As a base to work from, \cite{Dau14} gives us a high-level decomposition into weight spaces. However, this method is not concrete enough to be useful from a physics perspective.
 
 In addition to that, we plan to review the infinite families of weight vectors appearing in \cite{C20}. % TODO: Cite
 
-Once we have some idea of the structure, we plan to then generate code to derive all highest weight vectors of small degree. Having generated lots of examples, we should be able to use projection operators to build highest weight vectors in a more generalizable way. Once we have these, we should be able to leverage these results to build highest weight vectors in general degree. We plan to limit ourselves to vectors specific to the Lie algebras of types $A_{n}$, $C_{n}$, and $D_{n}$; this is because those are the types most applicable to continuous phase transitions.
+Once we have some idea of the structure, we plan to then write code to derive all highest weight vectors of small degree. Having generated lots of examples, we should be able to use projection operators to build highest weight vectors in a more generalizable way. Once we have these, we should be able to leverage these results to build highest weight vectors in general degree. We plan to limit ourselves to vectors specific to the Lie algebras of types $A_{n}$, $C_{n}$, and $D_{n}$ because these are the types most applicable to continuous phase transitions.
 
 % \begin{itemize}
 % \item Do the first few small examples, seeing the decomposition happen for $\fg = \fsl_n$ ($n=3,4$), $\fsp_{6}$, $\fso_6$ in small degree homogeneous components.
@@ -152,12 +156,10 @@ There is also the outcome where we create computational methods based on previou
 
 The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. 
 
-This project requires background knowledge of abstract algebra, and more specifically Lie theory. Patrick, Elijah, and Pranay all have experience with groups, rings, and modules from taking Math 332 (\emph{Abstract Algebra}), and Patrick and Elijah have further experience with Lie algebras from the Fall 2023 section of Math 412 (\emph{Topics in Algebra: Lie Algebras}). Patrick and Elijah are also pursuing a Math-CS interdisciplinary major and a CS minor, respectively, which will aid them in writing code that can efficiently determine the highest weight vectors of a Lie algebra $\fg$, and Pranay is pursuing a physics major that will allow them to help draw meaningful connections between high level math and theoretical physics.
+This project requires background knowledge of abstract algebra, and more specifically Lie theory. Patrick, Elijah, and Pranay all have experience with groups, rings, and modules from taking Math 332 (\emph{Abstract Algebra}), and Patrick and Elijah have further experience with Lie algebras from the Fall 2023 section of Math 412 (\emph{Topics in Algebra: Lie Algebras}). Patrick and Elijah are also pursuing a Math-CS interdisciplinary major and a CS minor, respectively, which will aid them in writing code that can efficiently determine the highest weight vectors of a Lie algebra $\fg$. Pranay is pursuing a physics major that will allow them to help draw meaningful connections between high level math and theoretical physics.
 
 
 \section{Role of Faculty}
-
-Zajj Daugherty and Noah Charles will (meetings of set frequency with research group?) be resources for the group and provide insight on good ways to proceed. ***Not sure about other roles***
 
 Zajj Daugherty and Noah Charles will help by being able to provide a high-level view of the project, as well as being able to direct a literature search. In addition, they will meet with the students multiple times per week in order to help provide structure to the project. This will also help them in providing a mechanism for accountability and giving a timetable for research. They can also function as sounding boards for inquiry and give advice as questions come up.
 
