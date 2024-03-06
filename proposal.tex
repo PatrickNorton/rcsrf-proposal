@@ -27,9 +27,14 @@
 
 \section{Background and Rationale}
 
+
+
+
 This project is in mathematical physics and representation theory. Specifically, we will be studying certain polynomials and their role in continuous phase transitions. A \emph{continuous phase transition} is a change to a system where some metric describing the system changes continuously over the transition \cite[\S1]{Sa06}. This is opposed to the general use of a phase transition where the phase changes may happen discretely. The classic example of a continuous phase transition is studying the magnetization---the strength of a magnet per unit volume---of a material as the material is heated. Applied heat causes the magnetization of a material to decrease continuously until the material is no longer magnetized. This is in contrast to a dis-continuous phase transition such as the boiling of water, where the density of the water changes discontinuously as the water changes from a liquid state to a gas state.
 
-In order to study continuous phase transitions, ???
+If we consider disordered electronic systems in metals (systems where the arrangement of the ions is not perfectly regular \cite{dicastro2006disordered}), the electron states can be either all localized or all delocalized depending on the properties of the system. \emph{Anderson transitions} describe the transitions between these two phases \cite{Evers_2008}. To study Anderson transitions, we can consider the ``Renormalization group action'' (RG action) on the states (formally, the states are maps $Q : M \to X$ where $M, X$ are manifolds and $X$ is called the target space; the RG action is on the space of functions from $X$ to $R$): this action consists of a procedure whereby we assign sets of points average values, and then rescale to obtain a state of the same ``size'' again. This gives us information about what properties of the system are preserved under changes of scale.
+
+Anderson transitions have various symmetries (simple examples include symmetry under rotations or time-reversal); these symmetries can be described mathematically as Lie groups under which the Lagrangian is invariant. The target space is now naturally described by a ``Riemannian symmetric space'' $G/K$, where $K$ is a (not necessarily normal) subgroup, and the RG action is given by a differential operator that is also invariant under this group. The problem of finding physical characterizations of the state that are scale-invariant can now be restated as the mathematical problem of finding eigenfunctions for a differential operator invariant under a Lie group $G$. From a result in representation theory, we know that this differential operator is a polynomial in the ``Laplace-Beltrami'' operator, and its eigenfunctions are the highest-weight vectors of the Lie algebra associated with $G.$
 
 USE TO TRANSITION TO MATH:\\
 The highest weight vectors of a Lie Algebra $\fg$ in $V$ are exactly the eigenvectors 
@@ -109,7 +114,6 @@ submodules of any module.
 
 PUT MORE TECHNICAL DEFINITIONS HERE
 
-
 This project aims to build on the theory regarding the highest weight vectors in $\Sym(\fg)$ by providing a classification of the highest weight vectors.  As a starting point, some work has been done on what the weights of $\Sym(\fg)$ are (***this needs citation, it was just mentioned in Zajj's email***). There has been additional work done on decomposing $\Sym(\fg)$ into invariant $\fg$-modules $\Sym(\fg)^\fg$ and a vector space $\cH$ of harmonic polynomials \cite[(3.10)]{NeRa2004}
 \[\Sym(\fg)\cong\Sym(\fg)^\fg\otimes\cH.\] 
 
@@ -122,20 +126,13 @@ Our secondary goal is to be able to build bridges between representation theory,
 
 % \end{itemize}
 
-
-
-
-***This section needs work, I'm not sure what hypotheses can be made considering that we're not doing an experient, and I'm not sure how much further we can go into the specific aim, maybe discuss what is already known and some possible first steps, although that could also go in the next section***
+***This section needs work, I'm not sure what hypotheses can be made considering that we're not doing an experiment, and I'm not sure how much further we can go into the specific aim, maybe discuss what is already known and some possible first steps, although that could also go in the next section***
 % TODO:
 % Explain what "classify" means
 
 \section{Design and Procedure}
 
-
-
-
 We'll begin by unpacking high level theorems about the decomposition of $\Sym(\fg)$ stated for general Lie algebras in terms of the three key examples pertinent to our study: the ``special linear'', ``special orthogonal'', and ``symplectic'' Lie algebras, notated $\fsl_n$, $\fso_n$, and $\fsp_n$ respectively. This will give us an opportunity to allow us to see the decomposition happen and give ideas as to possible classifications and help us determine how to proceed.
-
 
 Methods for decomposing semisimple finite-dimensional Lie algebras (such as $\fsl_n$) are known \cite{Dau14}, but only really provide an understanding of what is happening at a higher level. The decompositions do not provide concrete highest weight vectors that are required for Lie theory to be translated to physics. Because so much structure is used when working with Lie algebras at a high level, our goal is to find ways to exploit the known structure, and make use of it at a lower level.
 
@@ -154,14 +151,13 @@ Once we have some idea of the structure, we plan to then generate code to derive
 % \item Leverage these results to build hw vecs in general degree (specific to types ACD)
 % \end{itemize}
 
-
 \section{Predicted and Alternative Outcomes}
 
 Our predicted outcome is to find either recursive or closed formulas for the highest weight vectors of $\Sym(\fg)$, which will take the form of polynomials as $\Sym(\fg)$ is a polynomial ring. In the chance we are not able to achieve this goal, there are many meaningful contributions that can be made to the literature.
 
-Much of the Lie theory literature that exists does so at a very high level, and offers little to no insight about the applictions of such theory. There is great value in being able to ground the currently available high level Lie theory so that it is more easily accessible to those without a background in representation theory who want to exploit the results currently out of reach.
+Much of the Lie theory literature that exists does so at a very high level, and offers little to no insight about the applications of such theory. There is great value in being able to ground the currently available high level Lie theory so that it is more easily accessible to those without a background in representation theory who want to exploit the results currently out of reach.
 
-It would be equally useful to add context to some of the current literature that is only truly available to experts in the field. There are many `results' that could be more accurately refered to as unwritten corollaries, which adding context to would allow the material to be used at a lower level.
+It would be equally useful to add context to some of the current literature that is only truly available to experts in the field. There are many `results' that could be more accurately referred to as unwritten corollaries, which adding context to would allow the material to be used at a lower level.
 
 There is also the outcome where we create computational methods based on previous theory. This would help increase the accessibility of the work on Lie algebras by making it easier for researchers in various fields to create working examples without necessarily needing to acquire a deep knowledge of the theory behind it.
 
@@ -179,16 +175,24 @@ There is also the outcome where we create computational methods based on previou
 
 The role of the students in this project will be to do computations, create examples, and prove theorems in order to build up to a classification of the highest weight vectors in $\Sym(\fg)$. The students will work together to publish a paper highlighting either a discovered classification, or any progress made towards such a result. 
 
-This project requires background knowledge of abstract algebra, and more specifically Lie theory. Patrick, Elijah and Pranay all have experience with groups, rings, and modules from taking Math 332 (\emph{Abstract Algebra}), and Patrick and Elijah have further experience with Lie algebras from the Fall 2023 section of Math 412 (\emph{Topics in Algebra: Lie Algebras}). Patrick and Elijah are also pursuing a Math-CS interdisciplinary major and a CS minor, respectively, which will aid them in writing code that can efficiently determine the highest weight vectors of a Lie algebra $\fg$, and Pranay is pursuing a physics major that will allow them to help draw meaningful connections between high level math and theoritical physics.
+This project requires background knowledge of abstract algebra, and more specifically Lie theory. Patrick, Elijah, and Pranay all have experience with groups, rings, and modules from taking Math 332 (\emph{Abstract Algebra}), and Patrick and Elijah have further experience with Lie algebras from the Fall 2023 section of Math 412 (\emph{Topics in Algebra: Lie Algebras}). Patrick and Elijah are also pursuing a Math-CS interdisciplinary major and a CS minor, respectively, which will aid them in writing code that can efficiently determine the highest weight vectors of a Lie algebra $\fg$, and Pranay is pursuing a physics major that will allow them to help draw meaningful connections between high level math and theoretical physics.
 
 
 \section{Role of Faculty}
 
 Zajj Daugherty and Noah Charles will (meetings of set frequency with research group?) be resources for the group and provide insight on good ways to proceed. ***Not sure about other roles***
 
+Zajj Daugherty and Noah Charles will help by being able to provide a high-level view of the project, as well as being able to direct a literature search. In addition, they will meet with the students multiple times per week in order to help provide structure to the project. This will also help them in providing a mechanism for accountability and giving a timetable for research. They can also function as sounding boards for inquiry and give advice as questions come up.
+
 \section{Benefit to Student}
 
-% TODO: Written by Zajj
+This project is an exciting opportunity for students to collaborate across three disciplines: physics, mathematics, and computer science. The project is driven by questions in physics, relies on mathematical machinery, and will benefit strongly from computational expertise. Though each student brings a different background and skill set, each member of the team will be building part of the interdisciplinary bridge, learning how familiar topics expand into nearby fields of study. 
+
+From the physical perspective, we are motivated by a problem in scaling theory. The physicists on the team (Guangyi and Pranay) will derive the form of the problem that lends itself to a representation theoretic approach. In the process, they will learn techniques in Lagrangian mechanics, Gaussian integration in physics, phase transitions and the renormalization group approach, and symmetry group actions in statistical field theory. These techniques are foundational across mathematical physics and will help students transition into future projects across a broad range of subdisciplines. Both physics majors will have taken abstract algebra by this summer, and will gain further experience applying algebraic techniques.
+
+From the mathematical perspective, the question transforms into one of studying particular representations of Lie algebras. The mathematicians on the team (Patrick and Elijah) have taken a first course in Lie theory, and this project launches quite nicely from where that course left off. Students will learn how to ground some of the larger theorems of Lie theory in specific examples and computational methods, as well as how the mathematical structure translates back into physical applications. 
+
+Specifically, ...
 
 \printbibliography
 
